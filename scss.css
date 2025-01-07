@@ -1,0 +1,90 @@
+/* scss.css */
+
+/* General container styling */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading styling */
+h1 {
+    text-align: center;
+    color: #4CAF50; /* Green color */
+}
+
+h2 {
+    text-align: center;
+    color: #555;
+}
+
+/* Question box styling */
+.question-box {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f9f9f9; /* Light gray background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Question text styling */
+.question {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Option styling */
+.options {
+    margin-left: 20px;
+}
+
+.options label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* Submit button styling (positioned at the bottom center) */
+.submit-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+/* Navigation button styling (red background) */
+.nav-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.nav-btn {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: darkred;
+}

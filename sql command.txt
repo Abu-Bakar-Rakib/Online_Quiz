@@ -1,0 +1,56 @@
+-- Create the database
+CREATE DATABASE IF NOT EXISTS quiz_system;
+
+-- Use the created database
+USE quiz_system;
+
+-- Create the admin table
+CREATE TABLE IF NOT EXISTS admin (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id),
+    UNIQUE KEY (username)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Insert an admin (replace with hashed password for security)
+-- Make sure to hash the password using password_hash() in PHP before inserting
+INSERT INTO admin (username, password) VALUES ('admin', 'hashed_password_here');
+
+-- Create the students table
+CREATE TABLE IF NOT EXISTS students (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100) DEFAULT NULL,
+    student_id VARCHAR(50) DEFAULT NULL,
+    phone VARCHAR(15) DEFAULT NULL,
+    address VARCHAR(255) DEFAULT NULL,
+    password VARCHAR(255) DEFAULT NULL,
+    PRIMARY KEY (id),
+    UNIQUE KEY (student_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Create the questions table
+CREATE TABLE IF NOT EXISTS questions (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    question TEXT DEFAULT NULL,
+    option1 VARCHAR(255) DEFAULT NULL,
+    option2 VARCHAR(255) DEFAULT NULL,
+    option3 VARCHAR(255) DEFAULT NULL,
+    option4 VARCHAR(255) DEFAULT NULL,
+    correct_option VARCHAR(255) DEFAULT NULL,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Example insert for questions
+INSERT INTO questions (question, option1, option2, option3, option4, correct_option) VALUES
+('What is 2 + 2?', '3', '4', '5', '6', 'option2'),
+('What is the capital of France?', 'London', 'Paris', 'Rome', 'Berlin', 'option2');
+
+-- Insert a sample student (replace with actual student data)
+INSERT INTO students (name, student_id, phone, address, password) VALUES 
+('John Doe', 'john123', '0123456789', '123 Main St', 'hashed_password_here');
+
+-- Set auto increment values
+ALTER TABLE `admin` MODIFY `id` INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `questions` MODIFY `id` INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+ALTER TABLE `students` MODIFY `id` INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
